@@ -1,0 +1,145 @@
+/* Container & Layout */
+.banner-container {
+    /* background-color: #ffffff; */
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+    width: 100vw;  /* Adjusted to 90% of the view width */
+    margin: 0 auto;  /* Centered */
+}
+
+.banner-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #212529;
+}
+
+.banner-subtext {
+    font-size: 1.25rem;
+    color: #6c757d;
+}
+
+.banner-card {
+    max-width: 560px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;  /* Space below the card */
+    flex: 1;  /* Ensure cards take up equal space */
+}
+
+.banner-card-body {
+    padding: 1.25rem;
+}
+
+.banner-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #212529;
+}
+
+.banner-btn {
+    background-color: #343a40;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;  /* Slightly smaller button size */
+    font-size: 1.1rem;  /* Adjusted font size */
+    margin-bottom:30px;
+}
+
+.banner-btn:hover {
+    background-color: #495057;
+    color:white;
+}
+
+.banner-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.banner-progress {
+    margin-top: 2rem;
+}
+
+.banner-progress-bar {
+    background-color: #343a40;
+}
+
+.banner-cta-btns .btn {
+    font-weight: bold;
+    padding: 0.5rem 1rem;  /* Adjusted padding */
+    font-size: 1rem;  /* Adjusted button text size */
+}
+
+.banner-cta-btns .btn-outline-dark {
+    border: 2px solid #343a40;
+}
+
+.banner-cta-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;  /* Added space between banner image and buttons */
+}
+
+/* Adjust the Learn More button to be below the donation cards */
+.banner-row .col-lg-6 .d-flex {
+    flex-direction: column;  /* Align cards vertically */
+}
+
+@media (max-width: 991px) {
+    .banner-container {
+        width: 100vw;  /* Full width for smaller screens */
+    }
+
+    .banner-text {
+        font-size: 1.5rem;  /* Slightly reduced font size for mobile */
+    }
+
+    .banner-subtext {
+        font-size: 1rem;
+    }
+
+    .banner-card {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .banner-btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .banner-cta-btns .btn {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* For smaller devices, make sure the cards appear in a column */
+    .banner-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner-row .col-lg-6 .d-flex {
+        flex-direction: column;  /* Cards will be stacked vertically for small screens */
+    }
+}
+
+/* For larger screens, ensure cards are displayed in a row */
+@media (min-width: 992px) {
+    .banner-row .col-lg-6 .d-flex {
+        flex-direction: row;  /* Cards appear in a row for larger screens */
+        justify-content: space-between;
+    }
+
+    .banner-card {
+        max-width: calc(50% - 1rem);  /* Ensures each card takes up 50% of the space */
+    }
+}

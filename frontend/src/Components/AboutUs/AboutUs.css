@@ -1,0 +1,105 @@
+.about-section {
+    font-family: Arial, sans-serif;
+    color: #000; /* Use black color */
+  }
+  
+  .hero-section {
+    background-color: #000; /* Black background for hero section */
+  }
+  
+  .hero-heading {
+    font-size: 3rem;
+    color: #fff; /* White text */
+  }
+  
+  .hero-description {
+    font-size: 1.5rem;
+    color: #fff; /* White text */
+    margin-bottom: 20px;
+  }
+  
+  .mission-section {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+  }
+  
+  .section-heading {
+    font-size: 2.5rem;
+    color: #000; /* Black text */
+    margin-bottom: 20px;
+  }
+  
+  .section-description {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  .icon-box {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .icon {
+    font-size: 2.5rem;
+    color: #000; /* Black icons */
+  }
+  
+  .icon-box h4 {
+    font-size: 1.5rem;
+    color: #000; /* Black text */
+    margin-top: 10px;
+  }
+  
+  .founder-section {
+    background-color: #f8f9fa; /* Light background */
+    color: #000; /* Black text */
+  }
+  
+  .img-fluid {
+    max-width: 150px; /* Adjust image size */
+  }
+  
+  .impact-section {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+  }
+  
+  .impact-stat {
+    font-size: 1.5rem;
+  }
+  
+  .contact-section {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+  }
+  
+  .social-icons a {
+    font-size: 2rem;
+    margin: 0 10px;
+    color: #fff; /* White icons */
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #ccc; /* Lighter shade on hover */
+  }
+  
+  .btn-dark {
+    background-color: #333; /* Dark shade for buttons */
+    border-color: #333;
+  }
+  
+  .btn-dark:hover {
+    background-color: #555; /* Lighter shade on hover */
+  }
+  
+  .btn-light {
+    background-color: #ddd; /* Light shade for buttons */
+    border-color: #ddd;
+    color: #000; /* Black text */
+  }
+  
+  .btn-light:hover {
+    background-color: #bbb; /* Darker shade on hover */
+  }
+  

@@ -1,0 +1,156 @@
+/* General styles for the section */
+.team-section {
+    background-color: #f8f9fa;
+    padding: 10px 0; /* Reduce padding */
+}
+
+.team-container {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align cards */
+    gap: 10px; /* Reduce gap between cards */
+}
+
+/* Headings and text */
+.team-tagline {
+    color: #2d3e50;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.team-heading {
+    font-size: 2.5rem;
+    color: #2d3e50;
+    font-weight: bold;
+    margin-bottom: 10px; /* Reduce gap between header and cards */
+}
+
+.team-description {
+    color: #6c757d;
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 20px; /* Reduce gap between description and cards */
+}
+
+/* Styling for each team card */
+.team-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    padding: 10px; /* Reduce padding */
+    margin: auto;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px; /* Reduce space between rows */
+}
+
+/* Hover effect on cards */
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Image placeholder (makes it circular) */
+.team-image-placeholder {
+    background-color: #e4e4e4;
+    width: 50px; /* Adjust size */
+    height: 50px; /* Adjust size */
+    border-radius: 50%; /* Perfect circular shape */
+    margin-bottom: 10px; /* Adjust spacing */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-name {
+    font-size: 1rem; /* Adjust font size */
+    font-weight: bold;
+    color: #2d3e50;
+    margin-top: 5px; /* Adjust spacing */
+}
+
+.team-role {
+    color: #007bff;
+    font-size: 0.8rem; /* Adjust font size */
+    margin-bottom: 5px; /* Adjust spacing */
+}
+
+.team-description {
+    font-size: 0.7rem; /* Adjust font size */
+    color: #6c757d;
+    margin-bottom: 5px; /* Adjust spacing */
+    max-height: 30px; /* Limit the height to fit the content */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Social media icons */
+.team-icons {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Adjust gap between icons */
+}
+
+.team-icon {
+    font-size: 1rem; /* Adjust size */
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.team-icon:hover {
+    color: #0056b3;
+}
+
+/* Hiring section */
+.team-hiring {
+    font-size: 2rem;
+    color: #2d3e50;
+    font-weight: bold;
+    margin-top: 30px; /* Reduce gap */
+}
+
+.team-join {
+    color: #6c757d;
+    font-size: 1rem;
+    margin-bottom: 10px; /* Reduce gap */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Responsive design for team cards */
+@media (max-width: 1200px) {
+    .team-card {
+        max-width: 200px; /* Fixed width */
+    }
+}
+
+@media (max-width: 768px) {
+    .team-card {
+        max-width: 200px; /* Fixed width */
+    }
+}
+
+@media (max-width: 576px) {
+    .team-card {
+        max-width: 200px; /* Fixed width */
+    }
+}

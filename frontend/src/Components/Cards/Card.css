@@ -1,0 +1,152 @@
+
+/* Container with 90% width */
+.container-fluid {
+  width: 90%;
+  margin: 0 auto; /* Center the container */
+}
+
+/* Fixed card height and consistent image size */
+.custom-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 260px; /* Adjusted card height */
+  overflow: hidden; /* Prevent card from growing */
+  margin-bottom: 15px; /* Add some margin between cards */
+}
+
+.card-img-top {
+  width: 100%;
+  height: 150px; /* Slightly increased image height */
+  object-fit: cover; /* Ensures proper image scaling without distortion */
+  margin-bottom: 10px;
+}
+
+/* Title and description with fixed height */
+.fixed-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 30px; /* Reduced height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+}
+
+.fixed-description {
+  font-size: 0.9rem;
+  color: #555;
+  height: 40px; /* Adjusted height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+}
+
+/* Time remaining and distance capsules with equal spacing and icons */
+.card-content .d-flex {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120px; /* Adjusted card body height */
+  padding: 10px; /* Add padding to card body */
+}
+
+.card-body .badge {
+  font-size: 0.6rem;
+  padding: 0.3rem 0.7rem; /* Capsule size adjustment */
+  border-radius: 50px; /* Capsule shape */
+  background-color: #007bff;
+  color: white;
+  min-width: 60px; /* Ensure consistency in width */
+  text-align: center; /* Center text in the capsule */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge img {
+  margin-right: 5px; /* Space between icon and text */
+  height: 15px; /* Adjust icon size */
+}
+
+/* Adjustments for buttons and icons */
+.card-body .d-flex {
+  justify-content: space-between;
+  align-items: center; /* Align items vertically in the center */
+  margin-top: 10px; /* Add margin to space out elements */
+}
+
+button.btn-dark {
+  flex: 0 0 auto; 
+  width: 35%; /* Adjusted button width */
+  font-size: 0.8rem;
+  padding: 5px 10px; /* Smaller button size */
+  margin-right: 5px; /* Space between button and icons */
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 2px; /* Reduced gap between icons */
+}
+
+.social-icons a {
+  font-size: 1rem; /* Reduced icon size */
+  color: #333; /* Icon color */
+}
+
+.social-icons a:hover {
+  color: #007bff; /* Hover effect */
+}
+
+/* Ensure responsiveness */
+@media (max-width: 767px) {
+  .custom-card {
+    height: auto; /* Allow card height to adjust on smaller screens */
+  }
+
+  .card-img-top {
+    height: 100px; /* Reduce image size further on small screens */
+  }
+
+  .social-icons {
+    gap: 1px; /* Adjust gap between icons for smaller screens */
+  }
+}
+
+/* 4-card layout */
+.custom-col {
+  flex: 0 0 25%; /* 4 cards in a row */
+  max-width: 25%;
+}
+
+@media (max-width: 992px) {
+  .custom-col {
+    flex: 0 0 33.33%; /* 3 cards in a row on medium screens */
+    max-width: 33.33%;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-col {
+    flex: 0 0 50%; /* 2 cards in a row on small screens */
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-col {
+    flex: 0 0 100%; /* 1 card in a row on extra small screens */
+    max-width: 100%;
+  }
+}

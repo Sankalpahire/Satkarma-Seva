@@ -1,0 +1,156 @@
+.custom-footer {
+  background-color: #111; /* Black tone for UX */
+  color: #fff;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.footer-slogan {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #ccc;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-link {
+  color: #aaa;
+  text-decoration: none;
+}
+
+
+
+.custom-input {
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+.custom-button {
+  background-color: #0f9d58;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.custom-button-outline {
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  background: transparent;
+}
+
+.footer-divider {
+  border-color: #444;
+}
+
+.footer-icon {
+  font-size: 1.5rem;
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #0f9d58;
+}
+
+.footer-text {
+  color: #aaa;
+}
+
+footer {
+  font-size: 0.9rem;
+}
+
+footer hr {
+  margin: 1rem 0;
+}
+
+footer .row.justify-content-center {
+  gap: 10px; /* Adjust the gap between Follow Us and We Accept */
+}
+
+footer .btn {
+  font-size: 0.8rem;
+}
+
+/* Social icons */
+.footer-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+/* Payment icons */
+.payment-icon {
+  width: 40px; /* Adjust this size as needed */
+  height: auto;
+  margin-right: 8px;
+}
+
+/* Resize RazorPay icon */
+.razorpay-icon {
+  width: 45px; /* Adjust this size as needed */
+  height: auto;
+}
+
+/* Reduce size of "We Accept" images */
+.we-accept-icon {
+  width: 40px; /* Reduced size by 3px */
+  height: auto;
+  margin-right: 8px;
+}
+
+/* Social icons */
+.footer-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  transition: color 0.3s; /* Smooth transition */
+}
+
+/* Hover colors for social icons */
+.footer-icon.facebook:hover {
+  color: #3b5998; /* Facebook blue */
+}
+
+.footer-icon.twitter:hover {
+  color: #00aced; /* Twitter blue */
+}
+
+.footer-icon.instagram:hover {
+  color: #e1306c; /* Instagram pink */
+}
+
+.footer-icon.youtube:hover { color: #FF0000; /* YouTube red */ }
+
+/* Payment icons */
+.payment-icon {
+  width: 50px; /* Adjust this size as needed */
+  height: auto;
+  margin-right: 8px;
+}
+
+/* Resize RazorPay icon */
+.razorpay-icon {
+  width: 75px; /* Adjust this size as needed */
+  height: auto;
+  background-color: #aaaaaa;
+}
+
+/* Reduce size of "We Accept" images */
+.we-accept-icon {
+  width: 37px; /* Reduced size by 3px */
+  height: auto;
+  margin-right: 8px;
+}

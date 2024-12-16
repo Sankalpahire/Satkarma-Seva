@@ -1,0 +1,38 @@
+.founder-section {
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.founder-name {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.founder-subtitle {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.founder-bio {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.social-links .social-link {
+  margin-right: 10px;
+  color: #343a40;
+  transition: color 0.3s;
+}
+
+.social-links .social-link:hover {
+  color: #007bff;
+}
+
+.founder-image {
+  border-radius: 50%;
+}

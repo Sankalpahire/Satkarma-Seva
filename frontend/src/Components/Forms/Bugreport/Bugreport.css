@@ -1,0 +1,43 @@
+.report-bug-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ffffff, #f2f2f2);
+  }
+  
+  .report-bug-inner {
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    padding: 40px;
+  }
+  
+  .btn-dark {
+    background-color: #333;
+    border: none;
+  }
+  
+  .btn-dark:hover {
+    background-color: #555;
+  }
+  
+  .screenshot-upload-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .screenshot-upload-label {
+    width: 100%;
+  }
+  
+  .screenshot-thumbnail-preview {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
