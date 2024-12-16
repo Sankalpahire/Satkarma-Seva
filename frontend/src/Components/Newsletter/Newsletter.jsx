@@ -1,51 +1,60 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Newsletter.css';
-// import { baseURL } from '../../utils/contant.js'; // Ensure this is correctly imported
+import backgroundImage from '../../assets/news-letter-background.jpg'; 
 
-const Newsletter = () => {
+const NewsletterSection = () => {
   const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post(`${baseURL}/api/subscriber/subscribe`, { email })
-      .then(() => {
-        window.alert('Thank you for subscribing! You will be getting the best offers possible from our side.');
-        setEmail('');
-      })
-      .catch((err) => {
-        window.alert(err.response ? err.response.data.message : 'Error subscribing');
-        console.error(err);
-      });
+    setMessage('');
+    setError('');
+
+    try {
+      // Make POST request to your server
+      const response = await axios.post('https://sh-solution-backend.onrender.com/', { email });
+
+      // Check response and update message accordingly
+      if (response.data.success) {
+        setMessage('Thank you for subscribing!');
+      } else {
+        setError('Something went wrong, please try again.');
+      }
+
+      // Clear the email field
+      setEmail('');
+    } catch (err) {
+      console.error(err); // Log the error for debugging
+      setError('Failed to subscribe. Please check your email and try again later.');
+    }
   };
 
   return (
-    <div className="newsletter-section">
-      <div className="newsletter-content container py-5">
-        <h2 className="text-center mb-4">Subscribe to Our Newsletter</h2>
-        <p className="text-center mb-4">Stay updated with the latest news, offers, and promotions from us.</p>
-        <div className="row justify-content-center">
-          <div className="col-md-6">
-            <form className="newsletter-form" onSubmit={handleSubmit}>
-              <div className="input-group">
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-                <div className="input-group-append">
-                  <button className="btn btn-primary" type="submit">Subscribe</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+    <section className="newsletter-section" style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <div className="newsletter-container">
+        <h2 className="newsletter-heading">Stay Updated with Our Latest News</h2>
+        <p className="newsletter-subtitle">
+          Subscribe to our newsletter to get the latest updates and exclusive offers straight to your inbox.
+        </p>
+        <form className="newsletter-form" onSubmit={handleSubmit}>
+          <input
+            type="email"
+            className="newsletter-input"
+            placeholder="Enter your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <button type="submit" className="newsletter-button">Subscribe</button>
+        </form>
+        {message && <p className="newsletter-message success">{message}</p>}
+        {error && <p className="newsletter-message error">{error}</p>}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Newsletter;
+export default NewsletterSection;
