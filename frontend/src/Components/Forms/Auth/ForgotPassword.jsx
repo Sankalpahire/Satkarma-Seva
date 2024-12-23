@@ -28,6 +28,14 @@ const ForgotPassword = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+             <label className='mt-3'>What is your favorite book/movie/TV show?</label>
+            <input
+              type="security answer"
+              className="form-control"
+              placeholder="Enter answer"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className="d-grid mb-3">
             <button type="submit" className="btn btn-primary">Submit</button>

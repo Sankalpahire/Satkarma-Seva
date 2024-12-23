@@ -1,15 +1,13 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const userSchema = new mongoose.Schema({
+const UserSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   phoneNumber: { type: String, required: true },
-  password: { type: String, required: true }, // Password to be hashed later
-  securityQuestion: { type: String, required: true }, // Security question for resetting password
-  securityAnswer: { type: String, required: true }, // Hashed answer to the security question
-  donations: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Item' }], // Reference to donations they made
+  password: { type: String, required: true }, 
 });
 
-const User = mongoose.model('User', userSchema);
+const UserModel = mongoose.model('User', UserSchema);
 
-module.exports = User;
+module.exports = UserModel;

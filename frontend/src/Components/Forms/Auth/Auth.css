@@ -1,92 +1,109 @@
 .auth-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(to right, #ffffff, #f2f2f2);
-  }
-  
-  .auth-inner {
-    width: 100%;
-    max-width: 800px;
-    display: flex;
-    flex-direction: row;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    overflow: hidden;
-    background: #fff;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top:30px;
+  background: linear-gradient(to right, #ffffff, #f2f2f2);
+}
+
+.auth-inner {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.auth-image-container {
+  flex: 1;
+  display: none; /* Hide on small screens */
+  animation: slideIn 1s ease-in-out;
+}
+
+.auth-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.auth-form {
+  flex: 1;
+  padding: 40px;
+}
+
+@media (min-width: 768px) {
   .auth-image-container {
-    flex: 1;
-    display: none; /* Hide on small screens */
-    animation: slideIn 1s ease-in-out;
+    display: block; /* Show on medium screens and above */
   }
-  
-  .auth-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .auth-form {
-    flex: 1;
-    padding: 40px;
+  to {
+    opacity: 1;
   }
-  
-  @media (min-width: 768px) {
-    .auth-image-container {
-      display: block; /* Show on medium screens and above */
-    }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
   }
-  
-  .animated {
-    animation-duration: 1s;
-    animation-fill-mode: both;
+  to {
+    transform: translateX(0);
   }
-  
-  .fadeIn {
-    animation-name: fadeIn;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  
-  .btn-primary {
-    background-color: #333;
-    border: none;
-  }
-  
-  .btn-primary:hover {
-    background-color: #555;
-  }
-  
-  .auth-link, .forgot-password-link {
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .auth-link:hover, .forgot-password-link:hover {
-    color: #555;
-  }
-  
-  .auth-link-text {
-    color: #666;
-  }
-  
+}
+
+.btn-primary {
+  background-color: #333;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #555;
+}
+
+.auth-link, .forgot-password-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.auth-link:hover, .forgot-password-link:hover {
+  color: #555;
+}
+
+.auth-link-text {
+  color: #666;
+}
+
+.auth-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.auth-form .form-group input {
+  height: calc(2.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+}
+
+.auth-form .invalid-feedback {
+  display: none;
+}
+
+.auth-form.was-validated .form-control:invalid ~ .invalid-feedback {
+  display: block;
+}
