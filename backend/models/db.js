@@ -1,14 +1,10 @@
-
 const mongoose = require('mongoose');
+require('dotenv').config();  
+const MONGO_URI = process.env.MONGO_URI;
 
-const MONGO_URL = process.env.MONGO_URL
-
-mongoose.connect(MONGO_URL)
+mongoose.connect(MONGO_URI)
     .then(() => {
-        console.log('Connected to MongoDB...');
+        console.log('MongoDB Connected...');
+    }).catch((err) => {
+        console.log('MongoDB Connection Error: ', err);
     })
-    .catch((error) => {
-        console.error('Error connecting to MongoDB:', error);
-    });
-
-
