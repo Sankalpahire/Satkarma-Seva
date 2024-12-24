@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 
 const cors = require('cors');
-const AuthRouter = require('./Routes/AuthRouter');
+const AuthRouter = require('./routes/AuthRouter');
 // const ProductRouter = require('./Routes/ProductRouter');
 
 require('dotenv').config();
-require('./Models/db');
+require('./models/db');
 const PORT = process.env.PORT || 3000;
 
 // Middleware
