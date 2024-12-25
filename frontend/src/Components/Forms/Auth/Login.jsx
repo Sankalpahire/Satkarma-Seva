@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; 
 import axios from 'axios'; 
 import { API_BASE_URL } from '../../../utils/utils'; 
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Auth.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate(); 
+  
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(''); 
     setLoading(true); 
 
     try {
@@ -20,12 +21,13 @@ const Login = () => {
 
       if (response.data.success) {
         localStorage.setItem('authToken', response.data.token); 
+        toast.success('Login successful!', { autoClose: 3000 }); // Show success toast
         navigate('/dashboard'); 
       } else {
-        setError('Invalid credentials, please try again.');
+        toast.error('Invalid credentials, please try again.', { autoClose: 3000 }); // Show error toast
       }
     } catch (error) {
-      setError('An error occurred. Please try again later.');
+      toast.error('An error occurred. Please try again later.', { autoClose: 3000 }); // Show error toast
     } finally {
       setLoading(false); // Stop loading indicator
     }
@@ -33,14 +35,13 @@ const Login = () => {
 
   return (
     <div className="auth-wrapper">
+      <ToastContainer /> {/* Toastify Container */}
       <div className="auth-inner animated fadeIn">
         <div className="auth-image-container">
           <img src="path_to_login_image.jpg" alt="Login" className="auth-image" />
         </div>
         <form onSubmit={handleLogin} className="auth-form">
           <h3 className="text-center mb-4">Login</h3>
-          
-          {error && <div className="alert alert-danger">{error}</div>} {/* Show error message */}
           
           <div className="mb-3">
             <label>Email address</label>
@@ -77,7 +78,7 @@ const Login = () => {
           </div>
           
           <div className="text-center">
-            <span className="auth-link-text">Don't have an account? </span>
+            <span className="auth-link-text"> Don't have an account? </span>
             <Link to="/register" className="auth-link">Register</Link>
           </div>
         </form>
@@ -87,3 +88,4 @@ const Login = () => {
 };
 
 export default Login;
+

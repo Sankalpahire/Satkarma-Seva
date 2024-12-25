@@ -3,25 +3,26 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  margin-top:30px;
-  background: linear-gradient(to right, #ffffff, #f2f2f2);
+  padding: 30px; 
+  background: linear-gradient(135deg, #f0f0f0, #ffffff);
 }
 
 .auth-inner {
   width: 100%;
-  max-width: 800px;
+  max-width: 850px; 
   display: flex;
   flex-direction: row;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
+  border-radius: 20px;
   overflow: hidden;
-  background: #fff;
+  background: #ffffff;
 }
 
 .auth-image-container {
   flex: 1;
-  display: none; /* Hide on small screens */
+  display: none;
   animation: slideIn 1s ease-in-out;
+  background: #e0e0e0;
 }
 
 .auth-image {
@@ -32,12 +33,12 @@
 
 .auth-form {
   flex: 1;
-  padding: 40px;
+  padding: 50px; 
 }
 
 @media (min-width: 768px) {
   .auth-image-container {
-    display: block; /* Show on medium screens and above */
+    display: block; 
   }
 }
 
@@ -69,41 +70,69 @@
 }
 
 .btn-primary {
-  background-color: #333;
+  background-color: #4CAF50; 
   border: none;
+  font-size: 1rem; 
+  padding: 12px 20px; 
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #555;
+  background-color: #45a049; 
 }
 
 .auth-link, .forgot-password-link {
-  color: #333;
+  color: #4CAF50;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .auth-link:hover, .forgot-password-link:hover {
-  color: #555;
+  color: #2e7d32;
 }
 
 .auth-link-text {
-  color: #666;
+  color: #777; 
 }
 
 .auth-form .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; 
 }
 
 .auth-form .form-group input {
-  height: calc(2.5em + .75rem + 2px);
-  padding: .375rem .75rem;
+  width: 100%; 
+  max-width: 500px; 
+  margin: 0 auto; 
+  height: calc(2.8em + .75rem + 2px);
+  padding: .5rem 1rem; 
+  font-size: 1rem; 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-form .form-group input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
 .auth-form .invalid-feedback {
   display: none;
+  font-size: 0.9rem; /* Adjusted font size */
+  color: #d32f2f;
 }
 
 .auth-form.was-validated .form-control:invalid ~ .invalid-feedback {
   display: block;
+}
+
+@media (max-width: 576px) {
+  .auth-inner {
+    flex-direction: column; 
+  }
+
+  .auth-form {
+    padding: 30px;
+  }
 }
