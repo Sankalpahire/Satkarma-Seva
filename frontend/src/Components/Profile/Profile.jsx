@@ -4,6 +4,8 @@ import './Profile.css';
 import cover from '../../assets/cover.jpg'
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState('donations');
+  const authToken = localStorage.getItem('authToken');
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
   const renderDonationCard = (item) => (
     <Col xs={12} sm={6} md={4} key={item} className="profile__donation-card-wrapper mb-4">
@@ -58,7 +60,7 @@ const ProfilePage = () => {
              style={{height: '100px', width: '100px'}}
             />
             <div>
-              <h1 className="fs-2 fw-bold mb-0 profile__name">John Doe</h1>
+              <h1 className="fs-2 fw-bold mb-0 profile__name">{userInfo.name}</h1>
               <p className="mb-0 profile__tagline">Passionate about helping others</p>
             </div>
           </div>

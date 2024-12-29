@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
-import { FaUser, FaCog, FaSignOutAlt } from "react-icons/fa";
-import { FaShareAlt } from "react-icons/fa";
+import { FaUser, FaSignOutAlt, FaShareAlt } from "react-icons/fa";
 import "./Nav.css";
 import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const navigate = useNavigate();
+  const authToken = localStorage.getItem('authToken');
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
   const toggleHamburger = () => {
     setIsCollapsed((prevState) => !prevState);
@@ -31,6 +33,20 @@ const Navbar = () => {
       document.removeEventListener("click", closeDropdown);
     };
   }, [showDropdown]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('userInfo');
+    window.location.reload();
+  };
+
+  const handleProfileClick = () => {
+    if (authToken) {
+      navigate('/profile');
+    } else {
+      navigate('/login');
+    }
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
@@ -90,19 +106,35 @@ const Navbar = () => {
                 <BsFillPersonFill size={30} />
                 {showDropdown && (
                   <div className="dropdown-menu show">
-                    <div className="dropdown-header">
-                      <p>Username</p>
-                      <p>useremail@example.com</p>
-                    </div>
-                    <Link className="dropdown-item" to="/profile">
-                      <FaUser size={20} /> Profile
-                    </Link>
-                    <Link className="dropdown-item" to="/logout">
-                      <FaSignOutAlt size={20} /> Log out
-                    </Link>
-                    <Link className="dropdown-item" to="/share-platform">
-                      <FaShareAlt size={20} /> Share platform
-                    </Link>
+                    {authToken ? (
+                      <>
+                        <div className="dropdown-header">
+                          <p>{userInfo.name}</p>
+                          <p>{userInfo.email}</p>
+                        </div>
+                        <button className="dropdown-item" onClick={handleProfileClick}>
+                          <FaUser size={20} /> Profile
+                        </button>
+                        <Link className="dropdown-item" to="/share-platform">
+                          <FaShareAlt size={20} /> Share platform
+                        </Link>
+                        <button className="dropdown-item" onClick={handleLogout}>
+                          <FaSignOutAlt size={20} /> Log out
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <button className="dropdown-item" onClick={handleProfileClick}>
+                          <FaUser size={20} /> Profile
+                        </button>
+                        <Link className="dropdown-item" to="/share-platform">
+                          <FaShareAlt size={20} /> Share platform
+                        </Link>
+                        <Link className="dropdown-item" to="/login">
+                          Sign In / Sign Up
+                        </Link>
+                      </>
+                    )}
                   </div>
                 )}
               </div>
