@@ -1,17 +1,19 @@
 const express = require('express');
 const app = express();
-
 const cors = require('cors');
 const AuthRouter = require('./routes/AuthRouter');
 // const ProductRouter = require('./Routes/ProductRouter');
+const TotalPostsRoute = require('./routes/TotalPostsRouter'); 
+const UserCountRoute = require('./routes/UserCountRouter'); 
+const ActivePostsRoute = require('./routes/ActivePostsRouter');
 
 require('dotenv').config();
 require('./models/db');
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.json());  // Built-in middleware for parsing JSON bodies
-app.use(cors());  // Enable CORS for all routes
+app.use(express.json());  
+app.use(cors());  
 
 app.get('/', (req, res) => {
     res.send('Welcome to SATKARMA-SEVA');
@@ -20,15 +22,18 @@ app.get('/', (req, res) => {
 // Routes
 app.use('/auth', AuthRouter);
 // app.use('/products', ProductRouter);
+app.use('/api/contributors', UserCountRoute); 
+// app.use('/api/helping-hands', TotalPostsRoute); 
+// app.use('/api/available-items', ActivePostsRoute);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-    console.error("Error Stack:", err.stack);  // Logs the full error stack for debugging
-    console.error("Error Message:", err.message);  // Logs the error message
+    console.error("Error Stack:", err.stack); 
+    console.error("Error Message:", err.message); 
     res.status(500).json({
         message: "Internal Server Error",
-        error: err.message,  // Send the error message back in the response
-        stack: err.stack,    // Include stack trace for better debugging
+        error: err.message,  
+        stack: err.stack,    
     });
 });
 
